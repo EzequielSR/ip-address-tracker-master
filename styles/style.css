@@ -1,0 +1,37 @@
+:root{
+    --white: #fff;
+    --VeryDarkGray: hsl(0, 0%, 17%);
+    --DarkGray: hsl(0, 0%, 59%);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Rubik',sans-serif;
+}
+#container1{
+    background: url(../images/pattern-bg-desktop.png) center no-repeat ;
+    background-size: cover; 
+    height: 30vh;
+}
+#container2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100px;
+}
+#container2 h2{
+    color: var(--white);
+}
+#container2 p{
+    color:var(--DarkGray) ;
+}
+
+
+
+
+
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
