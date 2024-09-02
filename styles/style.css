@@ -2,6 +2,7 @@
     --white: #fff;
     --VeryDarkGray: hsl(0, 0%, 17%);
     --DarkGray: hsl(0, 0%, 59%);
+    --font-size: 18px;
 }
 
 *{
@@ -24,11 +25,37 @@
 }
 #container2 h2{
     color: var(--white);
+    margin-top: 30px;
 }
 #container2 p{
     color:var(--DarkGray) ;
+    font-size: var(--font-size);
+}
+div#search{
+    margin: 15px;
 }
 
+div#search input{
+    padding: 10px;
+    border-radius: 5px 0px 0px 5px;
+    border: none;
+    width: 400px;
+    outline: none;
+    transition: border 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+input:focus {
+    border: 50px solid #50db34;
+    box-shadow: 0px 0px 50px rgba(52, 219, 88, 0.5);
+  }
+
+div#search button{
+    padding: 9.5px;
+    margin-left: -4px;
+    border-radius: 0px 5px 5px 0;
+    border: none;
+    background: var(--VeryDarkGray);
+    cursor: pointer;
+}
 
 
 
