@@ -36,7 +36,7 @@ div#search{
 }
 
 div#search input{
-    padding: 10px;
+    padding: 9.9px;
     border-radius: 5px 0px 0px 5px;
     border: none;
     width: 400px;
@@ -45,11 +45,11 @@ div#search input{
 }
 input:focus {
     border: 50px solid #50db34;
-    box-shadow: 0px 0px 50px rgba(52, 219, 88, 0.5);
+    box-shadow: 0px 0px 20px rgba(52, 219, 88, 0.5);
   }
 
 div#search button{
-    padding: 9.5px;
+    padding: 9.9px;
     margin-left: -4px;
     border-radius: 0px 5px 5px 0;
     border: none;
