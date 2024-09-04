@@ -56,7 +56,10 @@ div#search button{
     background: var(--VeryDarkGray);
     cursor: pointer;
 }
-
+#map{
+    height: 100vh;
+    width: auto;
+}
 
 
 
