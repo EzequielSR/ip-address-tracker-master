@@ -5,4 +5,11 @@ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
 }).addTo(map);
 
-var marker = L.marker([51.5, -0.09]).addTo(map);
+var myIcon = L.icon({
+    iconUrl: '/public/images/icon-location.svg',
+    iconSize: [38, 45],
+    iconAnchor: [22, 94],
+    popupAnchor: [-3, -76],
+});
+
+L.marker([51.5, -0.09], {icon: myIcon}).addTo(map);
