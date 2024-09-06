@@ -18,25 +18,38 @@ crossorigin=""/>
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-<section id="container1">
-  <div id="container2">
+  <main>
     
-      <h2>IP Address Tracker</h2>
+    <section id="container1">
+    <div id="container2">
     
-      <div id="search">
-        <input type="text" placeholder="Search for any IP address or domain">
-        <button type="submit"><img src="images/icon-arrow.svg" alt=""></button>
-      </div>
-  </div>
-</section>
+        <h2>IP Address Tracker</h2>
+    
+        <div id="search">
+          <input type="text" placeholder="Search for any IP address or domain">
+          <button type="submit"><img src="images/icon-arrow.svg" alt=""></button>
+        </div>
+    </div>
+    <div id="info">
+      <ul>
+        <li><strong>IP Address</strong></li>
+        <li><strong>Location</strong></li>
+        <li><strong>Timezone</strong></li>
+        <li><strong>ISP</strong></li>
+      </ul>
+    </div>
+    </section>
+    
+    
 
-  IP Address
-  Location
-  Timezone
-    UTC <!-- add offset value dynamically using the API -->
-  ISP
-  <div id="map"></div>
-  
+   <!-- IP Address
+    Location
+    Timezone
+      UTC add offset value dynamically using the API 
+    ISP -->
+    <div id="map"></div>
+    
+  </main>
   <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
     Coded by <a href="https://www.frontendmentor.io/profile/EzequielSR">EzequielSR</a>.

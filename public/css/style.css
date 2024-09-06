@@ -15,6 +15,7 @@
     background: url(../images/pattern-bg-desktop.png) center no-repeat ;
     background-size: cover; 
     height: 30vh;
+    position: relative;
 }
 #container2{
     display: flex;
@@ -56,6 +57,40 @@ div#search button{
     background: var(--VeryDarkGray);
     cursor: pointer;
 }
+
+#info{
+    position: absolute;
+    top:80%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    padding: 20px;
+    width: 80%;
+    max-width: 900px;
+}
+
+#info ul{
+    list-style-type: none;
+    display: flex;
+    justify-content: space-around;
+}
+#info li{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 18px;
+    font-weight: bold;
+}
+#info li strong{
+    font-size: 14px;
+    font-weight: normal;
+    color: #5a5a5a;
+    margin-bottom: 5px;
+}
+
 #map{
     height: 100vh;
     width: auto;
