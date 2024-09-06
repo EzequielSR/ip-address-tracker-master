@@ -7,7 +7,7 @@ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
 
 var myIcon = L.icon({
     iconUrl: '/public/images/icon-location.svg',
-    iconSize: [38, 45],
+    iconSize: [38, 90],
     iconAnchor: [22, 94],
     popupAnchor: [-3, -76],
 });
