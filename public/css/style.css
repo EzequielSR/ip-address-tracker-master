@@ -28,28 +28,26 @@
     color: var(--white);
     margin-top: 30px;
 }
-#container2 p{
-    color:var(--DarkGray) ;
-    font-size: var(--font-size);
-}
-div#search{
+
+form#ipForm{
     margin: 15px;
 }
 
-div#search input{
+form#ipForm input{
     padding: 9.9px;
     border-radius: 5px 0px 0px 5px;
     border: none;
     width: 400px;
     outline: none;
     transition: border 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    
 }
 input:focus {
     border: 50px solid #50db34;
     box-shadow: 0px 0px 20px rgba(52, 219, 88, 0.5);
   }
 
-div#search button{
+form#ipForm button{
     padding: 9.9px;
     margin-left: -4px;
     border-radius: 0px 5px 5px 0;
@@ -84,7 +82,7 @@ div#search button{
     font-size: 18px;
     font-weight: bold;
 }
-#info li strong{
+#info li h6{
     font-size: 14px;
     font-weight: normal;
     color: #5a5a5a;
