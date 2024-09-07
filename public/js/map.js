@@ -11,6 +11,10 @@ let marker;
 
 // Função para atualizar o mapa com a nova localização
 function updateMap(lat, lng) {
+    if (!lat || !lng) {
+        return;
+    }
+
     if(marker){
         map.removeLayer(marker)
     }

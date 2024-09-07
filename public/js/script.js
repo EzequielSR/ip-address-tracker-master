@@ -16,13 +16,18 @@ document.getElementById('ipForm').addEventListener('submit', async (event) => {
       const data = await response.json();
 
       if (response.ok) {
-          document.getElementById('ipAddress').textContent = `IP Address: ${data.ip}`;
-          document.getElementById('location').textContent = `Location: ${data.location}`;
-          document.getElementById('timezone').textContent = `Timezone: ${data.timezone}`;
-          document.getElementById('isp').textContent = `ISP: ${data.isp}`;
+          document.getElementById('ipAddress').textContent = ` ${data.ip}`;
+          document.getElementById('location').textContent = ` ${data.location}`;
+          document.getElementById('timezone').textContent = ` ${data.timezone}`;
+          document.getElementById('isp').textContent = ` ${data.isp}`;
 
-          // Atualizar o mapa
-          updateMap(data.lat, data.lng);
+          // Update Map
+          if(data.lat && data.lng){
+            updateMap(data.lat, data.lng);
+          }else{
+            console.error('Error: Latitude or Longitude not found');
+            alert('Error: Latitude or Longitude not found');
+          }
       } else {
           alert(data.error);
       }

@@ -65,29 +65,50 @@ form#ipForm button{
     background-color: white;
     border-radius: 15px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    padding: 20px;
+    padding: 50px 20px;
     width: 80%;
-    max-width: 900px;
+    max-width: 1192px;
 }
 
 #info ul{
     list-style-type: none;
     display: flex;
     justify-content: space-around;
+    margin: 0;
+    padding: 0;
 }
 #info li{
     display: flex;
+    align-items: left;
     flex-direction: column;
-    align-items: center;
     font-size: 18px;
     font-weight: bold;
+    padding: 0 30px;
+    position: relative;
 }
+#info ul li:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 1px;
+    height: 100%;
+    background-color: var(--DarkGray); /* Cor da linha */
+  }
 #info li h6{
     font-size: 14px;
     font-weight: normal;
     color: #5a5a5a;
     margin-bottom: 5px;
+    text-align: left;
 }
+
+#info li h1{
+    font-size: 28px;
+    font-weight: 600;
+    margin: 0;
+}
+
 
 #map{
     height: 100vh;
