@@ -1,0 +1,69 @@
+@media (max-width: 375px) {
+    #container1{
+        height: 20vh;
+        background: url(../images/pattern-bg-mobile.png) center no-repeat ;
+        background-size: cover;
+    }
+    form#ipForm input{
+        width: 100%;
+    }
+    form#ipForm{
+        width: 96%;
+    }
+    #info{
+        padding: 20px 10px;
+    }
+    #info li h1{
+        font-size: 22px;
+    }
+
+    #info li h6{
+        font-size: 12px;
+        text-align: center;
+    }   
+    #info ul{
+        flex-direction: column;
+        align-items: center;
+    }
+    #info li{
+        padding: 10px 0;
+    }
+
+    #info ul li:not(:last-child)::after{
+        display: none;
+    }
+
+   
+    #map{
+        height: 60vh;
+    }
+}
+@media (max-width: 500px){
+    form#ipForm input {
+        width: 300px;
+    }
+
+    form#ipForm button {
+        padding: 14px;
+    }
+
+    #info {
+        width: 95%;
+    }
+
+    #info li h1 {
+        font-size: 22px;
+    }
+
+    #info li h6 {
+        font-size: 12px;
+    }
+}
+@media (min-width: 1440px){
+    #info{
+        max-width: 1192px;
+    }
+    #map{
+        height: 80vh;
+    }
+}
