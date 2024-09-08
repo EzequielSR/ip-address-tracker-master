@@ -1,21 +1,21 @@
 import express from 'express';
 import fetch from 'node-fetch';
 import dotenv from 'dotenv';
-dotenv.config()
-
+dotenv.config(); // Load environment variables
 
 const app = express();
 const port = 4000;
 
-app.use(express.static('public'));
+app.use(express.static('public')); // Serve static files
 
-// Middleware para analisar o corpo das requisições
+// Middleware to parse request bodies
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+// Handle IP info requests
 app.post('/api/ipinfo', async (req, res) => {
     const ip = req.body.ip;
-    
+
     if (!ip) {
         return res.status(400).json({ error: 'IP address is required' });
     }
@@ -28,8 +28,8 @@ app.post('/api/ipinfo', async (req, res) => {
             return res.status(400).json({ error: data.error.message });
         }
 
-        
-          res.json({
+        // Respond with IP information
+        res.json({
             ip: data.ip || 'Not available',
             location: data.location ? `${data.location.city || 'City not available'}, ${data.location.country || 'Country not available'}` : 'Location not available',
             timezone: data.location ? `UTC ${data.location.timezone || 'Timezone not available'}` : 'Timezone not available',

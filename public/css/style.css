@@ -1,52 +1,57 @@
-:root{
+:root {
     --white: #fff;
     --VeryDarkGray: hsl(0, 0%, 17%);
     --DarkGray: hsl(0, 0%, 59%);
     --font-size: 18px;
 }
 
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Rubik',sans-serif;
+    font-family: 'Rubik', sans-serif;
 }
-#container1{
-    background: url(../images/pattern-bg-desktop.png) center no-repeat ;
-    background-size: cover; 
+
+#container1 {
+    background: url(../images/pattern-bg-desktop.png) center no-repeat;
+    background-size: cover;
     height: 30vh;
     position: relative;
 }
-#container2{
+
+#container2 {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     height: 100px;
 }
-#container2 h2{
+
+#container2 h2 {
     color: var(--white);
     margin-top: 30px;
 }
 
-form#ipForm{
+form#ipForm {
     margin: 15px;
 }
 
-form#ipForm input{
+form#ipForm input {
     padding: 16.9px;
     border-radius: 15px 0px 0px 15px;
-    border:none;
+    border: none;
     width: 400px;
     outline: none;
     transition: border 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-    
+
 }
-form#ipForm:hover{
-        box-shadow: 0px 0px 20px rgba(61, 61, 61, 0.528);
-        border-radius: 16px;
+
+form#ipForm:hover {
+    box-shadow: 0px 0px 20px rgba(61, 61, 61, 0.528);
+    border-radius: 16px;
 }
-form#ipForm button{
+
+form#ipForm button {
     padding: 16.9px;
     margin-left: -4px;
     border-radius: 0px 15px 15px 0;
@@ -56,32 +61,33 @@ form#ipForm button{
     transition: background 0.2s ease-in-out;
 }
 
-form#ipForm button:hover{
+form#ipForm button:hover {
     background-color: #5a5a5a;
 }
 
-#info{
+#info {
     position: absolute;
-    top:80%;
+    top: 80%;
     left: 50%;
     transform: translateX(-50%);
     z-index: 1000;
     background-color: var(--white);
     border-radius: 15px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     padding: 50px 20px;
     width: 80%;
     max-width: 1192px;
 }
 
-#info ul{
+#info ul {
     list-style-type: none;
     display: flex;
     justify-content: space-around;
     margin: 0;
     padding: 0;
 }
-#info li{
+
+#info li {
     display: flex;
     align-items: left;
     flex-direction: column;
@@ -90,6 +96,7 @@ form#ipForm button:hover{
     padding: 0 30px;
     position: relative;
 }
+
 #info ul li:not(:last-child)::after {
     content: "";
     position: absolute;
@@ -97,9 +104,10 @@ form#ipForm button:hover{
     right: 0;
     width: 1px;
     height: 100%;
-    background-color: var(--DarkGray); 
-  }
-#info li h6{
+    background-color: var(--DarkGray);
+}
+
+#info li h6 {
     font-size: 14px;
     font-weight: normal;
     color: #5a5a5a;
@@ -107,19 +115,25 @@ form#ipForm button:hover{
     text-align: left;
 }
 
-#info li h1{
+#info li h1 {
     font-size: 28px;
     font-weight: 600;
     margin: 0;
 }
 
 
-#map{
+#map {
     height: 100vh;
     width: auto;
 }
 
 
 
-.attribution { font-size: 11px; text-align: center; }
-.attribution a { color: hsl(228, 45%, 44%); }
+.attribution {
+    font-size: 11px;
+    text-align: center;
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}

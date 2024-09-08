@@ -5,34 +5,34 @@ document.getElementById('ipForm').addEventListener('submit', async (event) => {
   const ip = document.getElementById('ipInput').value;
 
   try {
-      const response = await fetch('/api/ipinfo', {
-          method: 'POST',
-          headers: {
-              'Content-Type': 'application/json'
-          },
-          body: JSON.stringify({ ip })
-      });
-      
-      const data = await response.json();
+    const response = await fetch('/api/ipinfo', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ ip })
+    });
 
-      if (response.ok) {
-          document.getElementById('ipAddress').textContent = ` ${data.ip}`;
-          document.getElementById('location').textContent = ` ${data.location}`;
-          document.getElementById('timezone').textContent = ` ${data.timezone}`;
-          document.getElementById('isp').textContent = ` ${data.isp}`;
+    const data = await response.json();
 
-          // Update Map
-          if(data.lat && data.lng){
-            updateMap(data.lat, data.lng);
-          }else{
-            console.error('Error: Latitude or Longitude not found');
-            alert('Error: Latitude or Longitude not found');
-          }
+    if (response.ok) {
+      document.getElementById('ipAddress').textContent = ` ${data.ip}`;
+      document.getElementById('location').textContent = ` ${data.location}`;
+      document.getElementById('timezone').textContent = ` ${data.timezone}`;
+      document.getElementById('isp').textContent = ` ${data.isp}`;
+
+      // Update Map
+      if (data.lat && data.lng) {
+        updateMap(data.lat, data.lng);
       } else {
-          alert(data.error);
+        console.error('Error: Latitude or Longitude not found');
+        alert('Error: Latitude or Longitude not found');
       }
+    } else {
+      alert(data.error);
+    }
   } catch (error) {
-      console.error('Error:', error);
-      alert('An error occurred while fetching the IP information.');
+    console.error('Error:', error);
+    alert('An error occurred while fetching the IP information.');
   }
 });
