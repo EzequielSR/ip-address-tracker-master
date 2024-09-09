@@ -13,8 +13,8 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // Handle IP info requests
-app.post('/api/ipinfo', async (req, res) => {
-    const ip = req.body.ip;
+app.get('/api/ipinfo', async (req, res) => {
+    const ip = req.query.ip;
 
     if (!ip) {
         return res.status(400).json({ error: 'IP address is required' });

@@ -5,12 +5,8 @@ document.getElementById('ipForm').addEventListener('submit', async (event) => {
   const ip = document.getElementById('ipInput').value;
 
   try {
-    const response = await fetch('/api/ipinfo', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({ ip })
+    const response = await fetch(`/api/ipinfo?ip=${ip}`, {
+      method: 'GET'
     });
 
     const data = await response.json();
