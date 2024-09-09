@@ -1,12 +1,12 @@
 // script.js
-document.getElementById("ipForm").addEventListener("submit", async (event) => {
+document.getElementById('ipForm').addEventListener('submit', async (event) => {
   event.preventDefault();
 
-  const ip = document.getElementById("ipInput").value;
+  const ip = document.getElementById('ipInput').value;
 
   try {
     const response = await fetch(`/api/ipinfo?ip=${ip}`, {
-      method: "GET"
+      method: 'GET'
     });
 
     const data = await response.json();
@@ -21,14 +21,14 @@ document.getElementById("ipForm").addEventListener("submit", async (event) => {
       if (data.lat && data.lng) {
         updateMap(data.lat, data.lng);
       } else {
-        console.error("Error: Latitude or Longitude not found");
-        alert("Error: Latitude or Longitude not found");
+        console.error('Error: Latitude or Longitude not found');
+        alert('Error: Latitude or Longitude not found');
       }
     } else {
       alert(data.error);
     }
   } catch (error) {
-    console.error("Error:", error);
-    alert("An error occurred while fetching the IP information.");
+    console.error('Error:', error);
+    alert('An error occurred while fetching the IP information.');
   }
 });
