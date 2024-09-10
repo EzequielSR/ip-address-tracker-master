@@ -1,4 +1,5 @@
 import express from 'express';
+import path from 'path';
 import fetch from 'node-fetch';
 import dotenv from 'dotenv';
 import bodyParser from 'body-parser';
@@ -12,7 +13,7 @@ app.use(express.static('public')); // Serve static files
 app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.set('views', path.join(__dirname, 'views'));
+app.set('views', path.join(process.cwd(), 'views'));
 app.set('view engine', 'ejs')
 
 // Middleware to parse request bodies
