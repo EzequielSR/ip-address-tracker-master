@@ -8,7 +8,7 @@ dotenv.config(); // Load environment variables
 const app = express();
 const port = process.env.PORT ||3000;
 
-app.use(express.static('public')); // Serve static files
+app.use(express.static(path.join(process.cwd(),'public'))); // Serve static files
 
 app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: true }));
