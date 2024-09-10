@@ -8,11 +8,14 @@ const app = express();
 const port = process.env.PORT ||3000;
 
 app.use(express.static('public')); // Serve static files
-app.set('view engine', 'ejs');
 
-// Middleware to parse request bodies
 app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'ejs')
+
+// Middleware to parse request bodies
 
 app.get('/', (req, res) => {
     res.render('index.ejs', {data: {
