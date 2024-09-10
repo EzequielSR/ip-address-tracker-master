@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="" />
+  <title>IP Address Tracker</title>
+  <link rel="stylesheet" type="text/css" href="/css/style.css" />
+  <link rel="stylesheet" type="text/css" href="/css/mediaquery.css" />
+</head>
+<body>
+  <main>
+    <section id="container1">
+      <div id="container2">
+        <h2>IP Address Tracker</h2>
+        <form id="ipForm" method="POST" action="/api/ipinfo">
+          <input
+            type="text"
+            id="ipInput"
+            name="ip"
+            placeholder="Search for any IP address or domain"
+          />
+          <button type="submit">
+            <img src="/images/icon-arrow.svg" alt="Submit" />
+          </button>
+        </form>
+      </div>
+      <div id="info" data-ip="<%= data ? data.ip : '' %>" data-location="<%= data ? data.location : '' %>" data-timezone="<%= data ? data.timezone : '' %>" data-isp="<%= data ? data.isp : '' %>" data-lat="<%= data ? data.lat : '' %>" data-lng="<%= data ? data.lng : '' %>">
+        <ul>
+          <li>
+            <h6>IP Address</h6>
+            <h1 id="ipAddress"><%= data ? data.ip : 'Not available' %></h1>
+          </li>
+          <li>
+            <h6>Location</h6>
+            <h1 id="location"><%= data ? data.location : 'Not available' %></h1>
+          </li>
+          <li>
+            <h6>Timezone</h6>
+            <h1 id="timezone"><%= data ? data.timezone : 'Not available' %></h1>
+          </li>
+          <li>
+            <h6>ISP</h6>
+            <h1 id="isp"><%= data ? data.isp : 'Not available' %></h1>
+          </li>
+        </ul>
+      </div>
+    </section>
+    <div id="map"></div>
+  </main>
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+    Coded by <a href="https://www.frontendmentor.io/profile/EzequielSR">EzequielSR</a>.
+  </div>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+  <script src="/js/map.js"></script>
+  <script>
+    // Obtém as coordenadas do atributo data do elemento com id "info"
+    const infoElement = document.getElementById('info');
+    const lat = parseFloat(infoElement.getAttribute('data-lat'));
+    const lng = parseFloat(infoElement.getAttribute('data-lng'));
+
+    if (!isNaN(lat) && !isNaN(lng)) {
+      updateMap(lat, lng); // Atualiza o mapa se as coordenadas são válidas
+    }
+  </script>
+</body>
+</html>

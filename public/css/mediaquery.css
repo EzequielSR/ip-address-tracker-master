@@ -18,7 +18,7 @@
     }
 
     #info li h1 {
-        font-size: 22px;
+        font-size: 10px;
     }
 
     #info li h6 {
@@ -59,7 +59,7 @@
     }
 
     #info li h1 {
-        font-size: 22px;
+        font-size: 14px;
     }
 
     #info li h6 {
@@ -70,6 +70,10 @@
 @media (min-width: 1440px) {
     #info {
         max-width: 1192px;
+    }
+
+    #info li h1{
+        font-size: 20px;
     }
 
     #map {

@@ -116,7 +116,7 @@ form#ipForm button:hover {
 }
 
 #info li h1 {
-    font-size: 28px;
+    /* font-size: 28px; */
     font-weight: 600;
     margin: 0;
 }
